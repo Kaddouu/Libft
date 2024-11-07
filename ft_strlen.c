@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 20:21:07 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/07 22:42:34 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/08 00:21:01 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strlen(char *str)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len])

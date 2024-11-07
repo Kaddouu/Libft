@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:47:21 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/07 22:46:11 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/07 23:09:39 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	dest = (char *)dst;
 	source = (const char *)src;
 	i = 0;
-	while (i < n)
+	while (i < n && source[i] != '\0')
 	{
 		dest[i] = source[i];
 		i++;

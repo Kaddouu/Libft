@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 20:21:34 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/07 22:15:08 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/07 23:28:04 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-int	main(void)
+/*int	main(void)
 {
 	int i;
 	char buffer[10];
@@ -54,4 +54,4 @@ int	main(void)
 	}
 	printf("\n");
 	return (0);
-}
+}*/

@@ -6,14 +6,11 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 20:21:34 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 18:05:08 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/08 19:56:04 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -29,30 +26,25 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*int	main(void)
+int	main(void)
 {
 	int i;
-	char buffer[10];
+	char buffer[50];
 	char buffer2[10];
 
 	// test avec mon memset
 	i = 0;
-	ft_memset(buffer, 'B', 5);
-	while (i < 5)
+	ft_memset(buffer, 'B', sizeof(buffer));
+	while (i < sizeof(buffer))
 	{
 		printf("%c ", buffer[i]);
 		i++;
-	}
-	ft_memset(buffer + 5, 'C', 5);
-	while (i < 10)
-	{
-		printf("%c ", buffer[i]);
-		i++;
-	}
-	printf("\n");
+	} 
+		printf("\n");
+
 	// test avec vrai memset
 	i = 0;
-	memset(buffer2, 'B', 5);
+	memset(buffer2, 'B', 10);
 	while (i < 10)
 	{
 		printf("%c ", buffer2[i]);
@@ -60,4 +52,4 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	printf("\n");
 	return (0);
-}*/
+}

@@ -6,9 +6,11 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:58:30 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 18:06:05 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/08 19:39:00 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

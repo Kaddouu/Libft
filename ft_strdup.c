@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 20:10:38 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 19:39:22 by ilkaddou         ###   ########.fr       */
+/*   Created: 2024/11/08 18:26:03 by ilkaddou          #+#    #+#             */
+/*   Updated: 2024/11/08 18:28:33 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strdup(const char *s)
 {
-	if (c >= 33 && c <= 126)
-		return (1);
-	return (0);
-}
-/*int	main(void)
-{
-	printf("%d\n", ft_isprint(126));
-	int c;
-	int result;
+	char	*dest;
+	int		i;
 
-	c = 126;
-	result = isprint(c);
-	printf("When %c is passed, return (value is %d\n", c, result));
-}*/
+	i = 0;
+	dest = (char *)malloc(sizeof (char) * (ft_strlen(s) + 1));
+	if (!dest)
+		return (NULL);
+	while (s[i])
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

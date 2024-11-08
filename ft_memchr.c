@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:48:02 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:01:07 by ilkaddou         ###   ########.fr       */
+/*   Created: 2024/11/08 17:06:55 by ilkaddou          #+#    #+#             */
+/*   Updated: 2024/11/08 17:16:48 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char	*pointer;
+	size_t			i;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	pointer = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		if (pointer[i] == (unsigned char)c)
+			return (pointer);
+		i++;
 	}
 	return (NULL);
 }
-/*#include <string.h>
-int main()
-{
-	const char	*s = "bbbbaccccc";
-	int	c = 'a';
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
-}*/

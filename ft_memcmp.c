@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 16:48:02 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:01:07 by ilkaddou         ###   ########.fr       */
+/*   Created: 2024/11/08 17:21:02 by ilkaddou          #+#    #+#             */
+/*   Updated: 2024/11/08 17:57:42 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	unsigned char	*pointer1;
+	unsigned char	*pointer2;
+	size_t			i;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	pointer1 = (unsigned char *)s1;
+	pointer2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		if (pointer1[i] == pointer2[i])
+			return (pointer1[i] - pointer2[i]);
+		i++;
 	}
 	return (NULL);
 }
-/*#include <string.h>
-int main()
-{
-	const char	*s = "bbbbaccccc";
-	int	c = 'a';
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
-}*/

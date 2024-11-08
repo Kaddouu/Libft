@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilkaddou <ilkaddou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 20:21:34 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/07 23:28:04 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/08 18:05:08 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	// test avec mon memset
 	i = 0;
-	ft_memset(buffer, 'B', 10);
+	ft_memset(buffer, 'B', 5);
+	while (i < 5)
+	{
+		printf("%c ", buffer[i]);
+		i++;
+	}
+	ft_memset(buffer + 5, 'C', 5);
 	while (i < 10)
 	{
 		printf("%c ", buffer[i]);
@@ -46,7 +52,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	printf("\n");
 	// test avec vrai memset
 	i = 0;
-	memset(buffer2, 'B', 10);
+	memset(buffer2, 'B', 5);
 	while (i < 10)
 	{
 		printf("%c ", buffer2[i]);

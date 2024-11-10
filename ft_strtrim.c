@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:09:26 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/10 15:26:44 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 15:32:56 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	dest[i] = '\0';
 	return (dest);
 }
-
-int	main(int ac, char**av)
+/*int	main(int ac, char**av)
 {
 	if (ac != 3)
 		return (1);
 	printf("%s\n", ft_strtrim(av[1], av[2]));
 	return (0);
-}
+}*/

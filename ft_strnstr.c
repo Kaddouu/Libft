@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:37:01 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:57:12 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:41:14 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (little[j] == '\0')
 		return ((char *)big);
-	while (big[i] || i < len)
+	while (big[i] && i < len)
 	{	
 		while (big[i + j] == little[j])
 		{
@@ -34,15 +34,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-/*#include <string.h>
-int main(int ac, char**argv)
+
+/*int main(int ac, char**argv)
 {	
-	if (ac != 3)
+	if (ac != 4)
 		return (0);
-	char *big = argv[1];
-	char *little = argv[2];
-	
-	printf("%s\n", ft_strnstr(big, little, 10));
-	//printf("%s\n", strnstr(big, little, 10));
+
+	printf("%s\n", ft_strnstr(argv[1], argv[2], ft_atoi(argv[3])));
+	//printf("%d\n", strnstr(argv[1], argv[2], ft_atoi(argv[3])));
 	return (0);
 }*/

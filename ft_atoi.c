@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:58:30 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 19:39:00 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:39:03 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	what_sign = 1;
 	nbr = 0;
 	i = 0;
-	while ((nptr[i] >= 9 && str[i] <= 13) || nptr[i] == ' ')
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 	{
 		i++;
 	}
@@ -35,5 +35,5 @@ int	ft_atoi(const char *nptr)
 		nbr = (nptr[i] - 48) + nbr * 10;
 		i++;
 	}
-	return (nbr * what_sign);
+	return ((unsigned int)nbr * what_sign);
 }

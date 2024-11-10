@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 22:02:24 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/09 16:12:50 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:30:04 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);

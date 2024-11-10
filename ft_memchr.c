@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:06:55 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:16:48 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:20:26 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (pointer[i] == (unsigned char)c)
-			return (pointer);
+			return ((char *)pointer);
 		i++;
 	}
 	return (NULL);

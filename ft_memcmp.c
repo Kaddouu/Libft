@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:21:02 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:57:42 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:21:02 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (pointer1[i] - pointer2[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

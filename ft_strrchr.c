@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:48:02 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/08 17:01:07 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 14:22:00 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
+	if (s[i] == c)
+		return ((char *)&s[i]);
 	while (i >= 0)
 	{
 		if (s[i] == c)
@@ -26,10 +28,8 @@ char	*ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 /*#include <string.h>
-int main()
+int main(int ac, char**av)
 {
-	const char	*s = "bbbbaccccc";
-	int	c = 'a';
-	printf("%s\n", ft_strrchr(s, c));
-	printf("%s\n", strrchr(s, c));
+	printf("%s\n", ft_strrchr(av[1], av[2][0]));
+	printf("%s\n", strrchr(av[1], av[2][0]));
 }*/

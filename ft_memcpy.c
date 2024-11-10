@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 21:47:21 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/09 16:50:03 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/10 13:49:06 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = source[i];
+		dst[i] = source[i];
 		i++;
 	}
 	return (dest);

@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/11 16:52:25 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:28:58 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,33 +35,44 @@ char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	word_len;
-	int		i;
+	size_t		i;
 
 	res = (char **)malloc((num_words(s, c) + 1) * sizeof (char*));
+	if (!res)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] == c && s[i])
-			i++;
-		if (s[i])
+		while (*s == c && *s)
+			s++;
+		if (*s)
 		{
 			if (!ft_strchr(s, c))
 				word_len = ft_strlen(s);
 			else
 				word_len = ft_strchr(s, c) - s;
-			res[i] = (char*)malloc(sizeof (char) * (word_len));
-			res[i++] = ft_substr(s, 0, word_len);
+			res[i] = (char*)malloc(sizeof (char) * (word_len + 1));
+			/*if (!res[i])
+			{
+				while (i > 0)
+					free(res[--i]);
+				free(res);
+				return (NULL);
+			}*/
+			res[i] = ft_substr(s, 0, word_len);
+			res[i++][word_len] = '\0';
 			s += word_len;
 		}
 	}
 	res[i] = NULL;
+	printf("i = %zu\n", i);
 	return (res);
 }
 
-int main()  
+/*int main()  
 {  
-	char *s = "Bonjour Bonjour Bonjour";
-    char c = ' ';
+	char *s = "Bonjour Bonjour ";
+    char c = 'o';
 	int i;  
     char **result = ft_split(s, c);
 	if (result)
@@ -72,8 +83,8 @@ int main()
 			printf("%s\n", result[i]);
 			free(result[i]);
 			i++;
-		}  
+		}
 		free(result);
 	} 
     return 0;  
-}
+}*/

@@ -6,22 +6,27 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/11 16:13:27 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:52:25 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static size_t	num_words(char const s, char c)
+#include "libft.h"
+
+static size_t	num_words(char const *s, char c)
 {
-	size_t	i;
 	size_t	num;
 
-	num = 1;
-	i = 0;
-	while (s[i])
+	num = 0;
+	if (!*s)
+		return (0);
+	while (*s)
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		while (*s == c)
+			s++;
+		if (*s)
 			num++;
-		i ++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (num);
 }
@@ -32,18 +37,19 @@ char	**ft_split(char const *s, char c)
 	size_t	word_len;
 	int		i;
 
-	res = (char **)malloc((num_words(s, c) + 1) * sizeof(char*));
+	res = (char **)malloc((num_words(s, c) + 1) * sizeof (char*));
 	i = 0;
-	while (*s)
+	while (s[i])
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i])
 		{
 			if (!ft_strchr(s, c))
 				word_len = ft_strlen(s);
 			else
 				word_len = ft_strchr(s, c) - s;
+			res[i] = (char*)malloc(sizeof (char) * (word_len));
 			res[i++] = ft_substr(s, 0, word_len);
 			s += word_len;
 		}
@@ -52,14 +58,22 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-/*int main()  
+int main()  
 {  
-    int i;  
-    char* result[] = {};  
-    printf("String Array:\n");  
-    for(i = 0; i < 3; i++)  
-    {  
-        printf("%s\n", Array[i]);  
-    }  
+	char *s = "Bonjour Bonjour Bonjour";
+    char c = ' ';
+	int i;  
+    char **result = ft_split(s, c);
+	if (result)
+	{
+		i = 0;
+		while (result[i] != NULL)
+		{
+			printf("%s\n", result[i]);
+			free(result[i]);
+			i++;
+		}  
+		free(result);
+	} 
     return 0;  
-}*/
+}

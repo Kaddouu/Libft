@@ -6,7 +6,7 @@
 #    By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 12:41:24 by ilkaddou          #+#    #+#              #
-#    Updated: 2024/11/12 18:46:34 by ilkaddou         ###   ########.fr        #
+#    Updated: 2024/11/12 21:57:45 by ilkaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,13 @@ SOURCES = ft_atoi.c \
 		ft_toupper.c \
 		ft_split.c \
 		ft_itoa.c \
-		ft_strmapi.c
+		ft_strmapi.c \
+		ft_striteri.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c
+
 LIB = libft.h
 OBJECTS = $(SOURCES:.c=.o)
 

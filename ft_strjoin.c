@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 15:07:41 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/09 16:50:31 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:56:36 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	dest = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	dest = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!dest)
 		return (NULL);
 	while (s1[i])

@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:09:26 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/11 18:07:59 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/12 17:46:13 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	while (ft_isset(set, s1[start]) == 1)
 		start++;
 	while (ft_isset(set, s1[--end]) == 1)

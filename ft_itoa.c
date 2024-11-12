@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:07:25 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 18:10:50 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/12 18:51:17 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return ("-2147483648");
 	str = (char *)malloc(sizeof(char) * (len + 1));
-		if (!str)
-			return (0);
+	if (!str)
+		return (0);
 	if (n == 0)
 		str[0] = ('0');
 	if (n < 0)
@@ -45,7 +45,8 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-/*int main()
+int main()
 {
 	printf("%s\n", ft_itoa(-10));
-}*/
+	free(ft_itoa);
+}

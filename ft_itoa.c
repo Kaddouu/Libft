@@ -6,53 +6,61 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:07:25 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/13 16:40:50 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 17:28:09 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	nlen(n)
+size_t	nlen(int n)
 {
-	
-}
+	size_t	len;
 
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		len += 1;
+	while (n)
+	{
+		n /= 10;
+		len += 1;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	char	*str;
-	int		count;
+	size_t	i;
+	size_t	len;
+	char	*res;
 
-	len = 0;
-	count = n;
+	i = 0;
 	if (n == -2147483648)
-		return ("-2147483648");
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (0);
-	if (n == 0)
-		str[0] = ('0');
+		return (ft_strdup("-2147483648"));
+	len = nlen(n);
+	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!res)
+		return (NULL);
+	res[len] = '\0';
 	if (n < 0)
 	{
-		len += 1;
-		str[0] = '-';
+		res[0] = '-';
 		n = -n;
+		i = 1;
 	}
-	while (count)
+	while (len-- > i)
 	{
-		count /= 10;
-		len += 1;
+		res[len] = (n % 10) + '0';
+		n /= 10;
 	}
-	while (n)
-	{
-		str[--len] = (n % 10) + '0';
-		n = n / 10;
-	}
-	return (str);
+	return (res);
 }
-// int main()
-// {
-	// printf("%s\n", ft_itoa(-10));
-	// free(ft_itoa);
-// }
+//int main()
+//{
+//	char *str = ft_itoa(10);
+//	printf("%s\n", str);
+//	//printf("%s\n", itoa(-10));
+//	free(str);
+//}
+//

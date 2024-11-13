@@ -6,20 +6,19 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:54:38 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 22:02:21 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:35:01 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
-
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

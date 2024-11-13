@@ -6,11 +6,17 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:07:25 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 18:51:17 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/13 16:40:50 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	nlen(n)
+{
+	
+}
+
 
 char	*ft_itoa(int n)
 {
@@ -45,8 +51,8 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-int main()
-{
-	printf("%s\n", ft_itoa(-10));
-	free(ft_itoa);
-}
+// int main()
+// {
+	// printf("%s\n", ft_itoa(-10));
+	// free(ft_itoa);
+// }

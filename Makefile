@@ -6,7 +6,7 @@
 #    By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 12:41:24 by ilkaddou          #+#    #+#              #
-#    Updated: 2024/11/16 17:27:23 by ilkaddou         ###   ########.fr        #
+#    Updated: 2024/11/16 17:48:44 by ilkaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,10 +56,7 @@ BONUS = ft_lstadd_front_bonus.c \
 		ft_lstadd_back_bonus.c \
 		ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c \
-		#ft_lstiter_bonus.c	\
-		#ft_lstmap_bonus.c	\
-		
-		
+		ft_lstiter_bonus.c	
 
 BONUS_OBJECTS = $(BONUS:.c=.o)
 

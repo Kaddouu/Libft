@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:45:26 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 21:48:56 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:51:05 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (fd < 0)
+		return ;
 	ft_putstr_fd(s, fd);
 	write (fd, "\n", 1);
 }

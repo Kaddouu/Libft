@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 12:32:44 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:51:14 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,17 @@ static size_t	num_words(char const *s, char c)
 	return (num);
 }
 
-static void	ft_free(char tab[i])
+static void	ft_free(char **res, size_t i)
 {
 	size_t	j;
-	size_t	i;
 
 	j = 0;
 	while (j < i)
 	{
 		free(res[j]);
-		free(res);
 		j++;
 	}
-	return (NULL);
+	free(res);
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,7 +66,7 @@ char	**ft_split(char const *s, char c)
 				word_len = ft_strchr(s, c) - s;
 			res[i++] = ft_substr(s, 0, word_len);
 			if (!res[i - 1])
-				ft_free(res[i]);
+				ft_free(res, i);
 			s += word_len;
 		}
 	}

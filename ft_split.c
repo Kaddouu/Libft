@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 12:51:14 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:59:36 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ char	**ft_split(char const *s, char c)
 				word_len = ft_strchr(s, c) - s;
 			res[i++] = ft_substr(s, 0, word_len);
 			if (!res[i - 1])
+			{	
 				ft_free(res, i);
+				return (NULL);
+			}	
 			s += word_len;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:09:26 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 09:52:50 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 10:47:06 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = 0;
-	if (!s1 || !set)
-		return (NULL);
-	end = ft_strlen(s1);
+	if (!s1 && !set)
+		return (ft_strdup(""));
+	end = ft_strlen(s1) - 1;
 	while (ft_isset(set, s1[start]) == 1)
 		start++;
-	while (ft_isset(set, s1[--end]) == 1)
+	while (ft_isset(set, s1[end]) == 1)
 		end--;
+	if (end < start)
+		return (ft_strdup(""));
 	dest = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!dest)
 		return (NULL);
@@ -50,6 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	dest[i] = '\0';
 	return (dest);
 }
+
 /*int	main(int ac, char**av)
 {
 	if (ac != 3)

@@ -6,7 +6,7 @@
 #    By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/08 12:41:24 by ilkaddou          #+#    #+#              #
-#    Updated: 2024/11/16 19:38:55 by ilkaddou         ###   ########.fr        #
+#    Updated: 2024/11/17 11:03:15 by ilkaddou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SOURCES = ft_atoi.c \
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
+		ft_strlcpy.c \
 		ft_strlen.c \
 		ft_strncmp.c \
 		ft_strnstr.c \

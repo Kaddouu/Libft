@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 20:27:39 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:32:44 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,31 @@ static size_t	num_words(char const *s, char c)
 	return (num);
 }
 
+static void	ft_free(char tab[i])
+{
+	size_t	j;
+	size_t	i;
+
+	j = 0;
+	while (j < i)
+	{
+		free(res[j]);
+		free(res);
+		j++;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
 	size_t	word_len;
 	size_t	i;
 
-	res = (char **)malloc((num_words(s, c) + 1) * sizeof (char *));
-	if (!s || !res)
-		return (NULL);
 	i = 0;
+	res = (char **)malloc((num_words(s, c) + 1) * sizeof (char *));
+	if (!res)
+		return (NULL);
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -52,6 +67,8 @@ char	**ft_split(char const *s, char c)
 			else
 				word_len = ft_strchr(s, c) - s;
 			res[i++] = ft_substr(s, 0, word_len);
+			if (!res[i - 1])
+				ft_free(res[i]);
 			s += word_len;
 		}
 	}

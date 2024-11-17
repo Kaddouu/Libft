@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 18:11:18 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 15:42:46 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 15:57:00 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*str;
 
-	if (nmemb && size > SIZE_MAX / nmemb)
-		return (NULL);
 	str = malloc(nmemb * size);
 	if (!str)
 		return (NULL);
-	memset(str, 0, nmemb * size);
+	ft_memset(str, 0, nmemb * size);
 	return (str);
 }

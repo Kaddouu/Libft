@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 15:39:31 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 11:49:47 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:28:53 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	}
 	ft_lstlast(*lst)-> next = new;
-	// new -> next = NULL;
 }

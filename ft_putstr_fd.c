@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:46:03 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/12 21:53:26 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:28:06 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		while (*s)
-		{
-			ft_putchar_fd(*s, fd);
-			s++;
-		}
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ilkaddou <ilkaddou@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:46:04 by ilkaddou          #+#    #+#             */
-/*   Updated: 2024/11/17 12:59:36 by ilkaddou         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:12:43 by ilkaddou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,21 @@ static void	ft_free(char **res, size_t i)
 	free(res);
 }
 
+static size_t	ft_word_len(char const *s, char c)
+{
+	size_t	word_len;
+
+	word_len = 0;
+	if (!ft_strchr(s, c))
+				word_len = ft_strlen(s);
+	else
+		word_len = ft_strchr(s, c) - s;
+	return (word_len);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	size_t	word_len;
 	size_t	i;
 
 	i = 0;
@@ -60,17 +71,13 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
-				word_len = ft_strlen(s);
-			else
-				word_len = ft_strchr(s, c) - s;
-			res[i++] = ft_substr(s, 0, word_len);
+			res[i++] = ft_substr(s, 0, ft_word_len(s, c));
 			if (!res[i - 1])
 			{	
-				ft_free(res, i);
+				ft_free(res, i -1);
 				return (NULL);
 			}	
-			s += word_len;
+			s += ft_word_len(s, c);
 		}
 	}
 	res[i] = NULL;
